@@ -1,43 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Programming Languages</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @programming_languages.each do |programming_language| %>
-      <tr>
-        <td><%= programming_language.name %></td>
-        <td><%= programming_language.description %></td>
-        <td><%= programming_language.user.email %></td>
-        <td><%= link_to 'Show', programming_language %></td>
-        <td><%= link_to 'Edit', edit_programming_language_path(programming_language) %></td>
-        <td><%= link_to 'Destroy', programming_language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% @programming_languages.each do |programming_language| %>
-  <div class="card" style="width: 18rem;">
-    <% if programming_language.picture.attached? %>
-      <%= image_tag programming_language.picture, class: "card-img-top"%>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= programming_language.name %></h5>
-      <p class="card-text"><%= programming_language.description %></p>
-      <%= link_to "See Listings", programming_language, class: "btn btn-primary" %>
-    </div>
-  </div>
-  </p>
-<% end %>
 <br>
-
-<%= link_to 'New Programming Language', new_programming_language_path %>
+<% if (current_user.has_role?(:admin)) %>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>User</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @programming_languages.each do |programming_language| %>
+          <tr>
+            <td><%= programming_language.name %></td>
+            <td><%= programming_language.description %></td>
+            <td><%= programming_language.user.email %></td>
+            <td><%= link_to 'Show', programming_language %></td>
+            <td><%= link_to 'Edit', edit_programming_language_path(programming_language) %></td>
+            <td><%= link_to 'Destroy', programming_language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to 'New Programming Language', new_programming_language_path %>
+    <hr>
+  </div>
+<% end %>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <% @programming_languages.each do |programming_language| %>
+      <div class="col-md-4 text-center d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+          <% if programming_language.picture.attached? %>
+            <%= image_tag programming_language.picture, class: "card-img-top"%>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= programming_language.name %></h5>
+            <p class="card-text"><%= programming_language.description %></p>
+            <%= link_to "See Listings", programming_language, class: "btn btn-primary" %>
+          </div>
+        </div>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

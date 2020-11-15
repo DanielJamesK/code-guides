@@ -1,3 +1,15 @@
 // Place all the styles related to the ProgrammingLanguages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pimage{
+  height: 100%;
+  width: 100%;
+}

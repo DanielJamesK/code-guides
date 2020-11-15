@@ -1,13 +1,26 @@
 <div class="jumbotron">
   <div class="row">
-    <div class="col-md-6">
-      <h1 class="display-4">Code Guides</h1>
+    <div class="col-md-12 text-center">
+      <h1 class="display-3">Code Guides</h1>
+      <div class="container" id="home-para">
+       <p class="lead">Welcome to Code Guides, a platform for developers to connect with tutors for respective programming languages they wish to learn!</p>
+      </div>
+      <%= image_tag "hero1", class: "home-image"%>
+    </div>
+  </div>
+  <hr class="my-4">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <h2 class="display-5">Students</h2>
       <p class="lead">Welcome to Code Guides, a platform for developers to connect with tutors for respective programming languages they wish to learn!</p>
       <hr class="my-4">
       <%= link_to "View Programming Languages", programming_languages_path, class:"btn btn-primary btn-lg"%>
     </div>
-    <div class="col-md-6">
-      <%= image_tag "hero1", class: "home-image"%>
+    <div class="col-md-6 text-center">
+      <h2 class="display-5">Tutors</h2>
+      <p class="lead">Welcome to Code Guides, a platform for developers to connect with tutors for respective programming languages they wish to learn!</p>
+      <hr class="my-4">
+        <%= link_to "Create A Listing", new_listing_path, class:"btn btn-primary btn-lg"%>
     </div>
   </div>
 </div>
