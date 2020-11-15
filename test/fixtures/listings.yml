@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tutor_name: MyString
+  tutor_email: MyString
+  title: MyString
+  description: MyText
+  price: 1.5
+  user: one
+  programming_language: one
+
+two:
+  tutor_name: MyString
+  tutor_email: MyString
+  title: MyString
+  description: MyText
+  price: 1.5
+  user: two
+  programming_language: two

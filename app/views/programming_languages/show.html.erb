@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @programming_language.name %>
-</p>
+<h1>Ruby Listings</h1>
+<%= @listings.each do |listing| %>
+  <tr>
+    <td><%= listing.tutor_name %></td>
+    <td><%= listing.tutor_email %></td>
+    <td><%= listing.user.email %></td>
+    <td><%= listing.price %></td>
+  </tr>
+<% end %>
+  <div class="card" style="width: 18rem;">
+    <% if @programming_language.picture.attached? %>
+      <%= image_tag @programming_language.picture, class: "card-img-top"%>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title">Card tasditle</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @programming_language.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @programming_language.user.email %>
-</p>
-<p>
-  <%= image_tag @programming_language.picture%>
-</p>
-
-<%= link_to 'Edit', edit_programming_language_path(@programming_language) %> |
-<%= link_to 'Back', programming_languages_path %>
+  <%= link_to 'Edit', edit_programming_language_path(@programming_language) %> |
+  <%= link_to 'Back', programming_languages_path %>

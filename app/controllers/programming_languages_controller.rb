@@ -1,5 +1,6 @@
 class ProgrammingLanguagesController < ApplicationController
   before_action :set_programming_language, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   # GET /programming_languages
   # GET /programming_languages.json
@@ -10,6 +11,7 @@ class ProgrammingLanguagesController < ApplicationController
   # GET /programming_languages/1
   # GET /programming_languages/1.json
   def show
+    @listings = Listing.where(programming_language_id: params[:id])
   end
 
   # GET /programming_languages/new
@@ -62,6 +64,10 @@ class ProgrammingLanguagesController < ApplicationController
   end
 
   private
+
+    def set_listing
+      @listings = Listing.all
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_programming_language
       @programming_language = ProgrammingLanguage.find(params[:id])

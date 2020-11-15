@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_010057) do
+ActiveRecord::Schema.define(version: 2020_11_15_035929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 2020_11_15_010057) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "tutor_name"
+    t.string "tutor_email"
+    t.string "title"
+    t.text "description"
+    t.float "price"
+    t.bigint "user_id", null: false
+    t.bigint "programming_language_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["programming_language_id"], name: "index_listings_on_programming_language_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "programming_languages", force: :cascade do |t|
@@ -76,5 +90,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_010057) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "listings", "programming_languages"
+  add_foreign_key "listings", "users"
   add_foreign_key "programming_languages", "users"
 end
