@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @programming_language.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @programming_language.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @programming_language.user.email %>
+</p>
+<p>
+  <%= image_tag @programming_language.picture%>
+</p>
+
+<%= link_to 'Edit', edit_programming_language_path(@programming_language) %> |
+<%= link_to 'Back', programming_languages_path %>
