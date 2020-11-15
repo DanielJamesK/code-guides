@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all
+    @personal_listings = current_user.listings
   end
 
   def find_by_lang
@@ -12,7 +13,7 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    @listings = Listing.find_by_programming_language_id(1)
+    @listings = Listing.find_by_programming_language_id(params[:id])
   end
 
   # GET /listings/new
@@ -28,7 +29,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-
+    @listing.user_id = current_user.id
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
