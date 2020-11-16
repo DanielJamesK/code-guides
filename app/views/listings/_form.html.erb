@@ -4,7 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :tutor_name %>
+    <%= f.input :tutor_name, input_html: {value: current_user.first_name} %>
     <%= f.input :tutor_email %>
     <%= f.input :title %>
     <%= f.input :description %>

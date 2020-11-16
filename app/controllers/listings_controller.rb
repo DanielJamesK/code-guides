@@ -8,8 +8,6 @@ class ListingsController < ApplicationController
     @personal_listings = current_user.listings
   end
 
-  def find_by_lang
-  end
   # GET /listings/1
   # GET /listings/1.json
   def show
@@ -19,6 +17,7 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @user_name = current_user.first_name
   end
 
   # GET /listings/1/edit
