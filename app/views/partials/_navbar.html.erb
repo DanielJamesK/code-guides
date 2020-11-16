@@ -13,7 +13,19 @@
       <li class="nav-item active">
         <% if user_signed_in? %>
           <li class="nav-item color-white">
-            <h5><%= current_user.email%></h5>
+            <li class="nav-item">
+              <div class="name">
+                <h5><%= current_user.first_name%></h5>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="name name2">
+                <h5><%= current_user.last_name%></h5>
+              </div>
+            </li>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Listings Dashboard", listings_path, method: :get, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Edit Profile", edit_user_registration_path, method: :get, class: "nav-link" %>
