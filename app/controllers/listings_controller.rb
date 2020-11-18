@@ -2,8 +2,6 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
-  has_one_attached :picture
-
   # GET /listings
   # GET /listings.json
   def index
