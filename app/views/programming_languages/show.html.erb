@@ -4,10 +4,10 @@
 <div class="container d-flex justify-content-center">
   <div class="row">
     <% @listings.each do |listing| %>
-      <div class="col-md-4">
+      <div class="col-md-auto">
         <div class="card" style="width: 18rem;">
-          <% if @programming_language.picture.attached? %>
-            <%= image_tag @programming_language.picture, class: "card-img-top"%>
+          <% if listing.picture.attached? %>
+            <%= cl_image_tag(listing.picture.key, crop: :scale, cloud_name: "dvlberf5o", width: 100, class: "card-img-top" ) %>
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= listing.title %></h5>

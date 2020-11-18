@@ -2,6 +2,8 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
+  has_one_attached :picture
+
   # GET /listings
   # GET /listings.json
   def index
@@ -73,6 +75,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:tutor_name, :tutor_email, :title, :description, :price, :user_id, :programming_language_id)
+      params.require(:listing).permit(:tutor_name, :tutor_email, :title, :description, :price, :user_id, :programming_language_id, :picture)
     end
 end
