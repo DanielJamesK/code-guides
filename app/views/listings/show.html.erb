@@ -1,39 +1,56 @@
-<p>
-  <strong>Tutor name:</strong>
-  <%= @listing.tutor_name %>
-</p>
-
-<p>
-  <strong>Tutor email:</strong>
-  <%= @listing.tutor_email %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
-</p>
-
-<p>
-  <strong>Programming language:</strong>
-  <%= @listing.programming_language_id %>
-</p>
-
-<% if user_signed_in? && (current_user.has_role?(:admin) || current_user.id == @listing.user_id )%>
-  <%= link_to 'Edit', edit_listing_path(@listing) %> |
-<% end %>
-<%= link_to 'Back', listings_path %>
+<div class="jumbotron d-flex justify-content-center align-items-center">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <div>
+        <% if @listing.picture.attached? %>
+          <%= cl_image_tag(@listing.picture.key, crop: :scale, cloud_name: "dvlberf5o", class: "listing-image" ) %>
+        <% else %>
+          <%= image_tag("defaultimage2.png", class: "card-img-top")%>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p>
+        <strong>Tutor name:</strong>
+        <%= @listing.tutor_name %>
+      </p>
+      
+      <p>
+        <strong>Tutor email:</strong>
+        <%= @listing.tutor_email %>
+      </p>
+      
+      <p>
+        <strong>Title:</strong>
+        <%= @listing.title %>
+      </p>
+      
+      <p>
+        <strong>Description:</strong>
+        <%= @listing.description %>
+      </p>
+      
+      <p>
+        <strong>Price:</strong>
+        <%= @listing.price %>
+      </p>
+      
+      <p>
+        <strong>User:</strong>
+        <%= @listing.user_id %>
+      </p>
+      
+      <p>
+        <strong>Programming language:</strong>
+        <%= @listing.programming_language_id %>
+      </p>
+      
+      <% if user_signed_in? && (current_user.has_role?(:admin) || current_user.id == @listing.user_id )%>
+      <%= link_to 'Edit', edit_listing_path(@listing) %> |
+      <% end %>
+      <%= link_to 'Back', listings_path %>
+    </div>
+  </div>
+</div>
+    
+    
