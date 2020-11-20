@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Ruby Listings</h1>
 <div class="container d-flex justify-content-center">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <% @listings.each do |listing| %>
       <div class="col-md-auto">
         <div class="card" style="width: 18rem;">
           <% if listing.picture.attached? %>
-            <%= cl_image_tag(listing.picture.key, crop: :scale, cloud_name: "dvlberf5o", width: 100, class: "card-img-top" ) %>
+            <%= cl_image_tag(listing.picture.key, crop: :scale, cloud_name: "dvlberf5o", class: "card-img-top" ) %>
+          <% else %>
+            <%= image_tag("defaultimage2.png", class: "card-img-top")%>
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= listing.title %></h5>
@@ -18,8 +18,6 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-        <%= link_to 'Edit', edit_programming_language_path(@programming_language) %> |
-        <%= link_to 'Back', programming_languages_path %>
       </div>
     <% end %>
   </div>

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Programming Languages</h1>
 <br>
 <% if (current_user.has_role?(:admin)) %>
@@ -33,17 +31,23 @@
   </div>
 <% end %>
 <div class="container d-flex justify-content-center">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <% @programming_languages.each do |programming_language| %>
       <div class="col-md-auto text-center d-flex align-items-stretch">
         <div class="card" style="width: 18rem;">
           <% if programming_language.picture.attached? %>
-            <%= cl_image_tag(programming_language.picture.key, crop: :scale, cloud_name: "dvlberf5o", width: 100, class: "card-img-top" ) %>
+            <%= cl_image_tag(programming_language.picture.key, crop: :scale, cloud_name: "dvlberf5o", class: "card-img-top" ) %>
+          <% else %>
+            <%= image_tag("codeimage2.jpg", class: "card-img-top")%>
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= programming_language.name %></h5>
             <p class="card-text"><%= programming_language.description %></p>
             <%= link_to "See Listings", programming_language, class: "btn btn-primary" %>
+            <div class="container d-flex justify-content-center ">
+              <p class="editback"><%= link_to 'Edit', edit_programming_language_path(programming_language) %></p>
+              <p class="editback"><%= link_to 'Back', programming_languages_path %></p>
+            </div>
           </div>
         </div>
         </p>

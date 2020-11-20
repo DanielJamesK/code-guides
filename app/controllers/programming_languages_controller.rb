@@ -1,5 +1,6 @@
 class ProgrammingLanguagesController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_roles, only: [:edit, :update, :destroy]
   before_action :set_programming_language, only: [:show, :edit, :update, :destroy]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
@@ -31,7 +32,7 @@ class ProgrammingLanguagesController < ApplicationController
     @programming_language.user_id = current_user.id
     respond_to do |format|
       if @programming_language.save
-        format.html { redirect_to @programming_language, notice: 'Programming language was successfully created.' }
+        format.html { redirect_to programming_languages_path, notice: 'Programming language was successfully created.' }
         format.json { render :show, status: :created, location: @programming_language }
       else
         format.html { render :new }
@@ -45,7 +46,7 @@ class ProgrammingLanguagesController < ApplicationController
   def update
     respond_to do |format|
       if @programming_language.update(programming_language_params)
-        format.html { redirect_to @programming_language, notice: 'Programming language was successfully updated.' }
+        format.html { redirect_to programming_languages_path, notice: 'Programming language was successfully updated.' }
         format.json { render :show, status: :ok, location: @programming_language }
       else
         format.html { render :edit }
@@ -59,13 +60,20 @@ class ProgrammingLanguagesController < ApplicationController
   def destroy
     @programming_language.destroy
     respond_to do |format|
-      format.html { redirect_to programming_languages_url, notice: 'Programming language was successfully destroyed.' }
+      format.html { redirect_to programming_languages_path, notice: 'Programming language was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
 
+    def check_roles
+      if !(user_signed_in? && current_user.has_role?(:admin))
+        flash[:alert] = 'You are not authorized to access that page'
+        redirect_to root_path
+      end
+    end
+    
     def set_listing
       @listings = Listing.all
     end
