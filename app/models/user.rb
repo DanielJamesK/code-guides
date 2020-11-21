@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :programming_languages, dependent: :destroy
 
+  validates :first_name, length: { in: 2..25 }, presence: true
+  validates :last_name, length: { in: 2..25 }, presence: true
   validate :first_name_one_word, :last_name_one_word, :letters_only_first_name, :letters_only_last_name
 
   def first_name_one_word
@@ -23,7 +25,7 @@ class User < ApplicationRecord
 
   def letters_only_last_name
     if last_name !~ /[[:alpha:]]/
-      errors.add(:first_name, "can only contain letters")
+      errors.add(:last_name, "can only contain letters")
     end
   end
 

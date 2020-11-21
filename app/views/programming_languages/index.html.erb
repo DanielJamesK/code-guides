@@ -33,15 +33,16 @@
 <div class="container d-flex justify-content-center">
   <div class="row d-flex justify-content-center">
     <% @programming_languages.each do |programming_language| %>
-      <div class="col-md-auto text-center d-flex align-items-stretch">
-        <div class="card" style="width: 18rem;">
+      <div class="col-md-auto d-flex align-items-stretch">
+        <div class="card card-margin" style="width: 18rem;">
           <% if programming_language.picture.attached? %>
             <%= cl_image_tag(programming_language.picture.key, crop: :scale, cloud_name: "dvlberf5o", class: "card-img-top" ) %>
           <% else %>
             <%= image_tag("codeimage2.jpg", class: "card-img-top")%>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title"><%= programming_language.name %></h5>
+            <h5 class="card-title text-center "><%= programming_language.name %></h5>
+            <h6>Description</h6>
             <p class="card-text"><%= programming_language.description %></p>
             <%= link_to "See Listings", programming_language, class: "btn btn-primary" %>
             <div class="container d-flex justify-content-center ">
