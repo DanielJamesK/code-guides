@@ -2,7 +2,7 @@ class Listing < ApplicationRecord
   belongs_to :user
   belongs_to :programming_language
 
-  has_one_attached :picture
+  has_one_attached :picture, dependent: :purge
   
   validate :alphanum_description, :alphanum_title 
   validates :title, length: { in: 2..25 }, presence: true

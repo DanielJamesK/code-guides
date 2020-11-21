@@ -2,7 +2,7 @@ class ProgrammingLanguage < ApplicationRecord
   belongs_to :user
   has_many :listings, dependent: :destroy
 
-  has_one_attached :picture
+  has_one_attached :picture, dependent: :purge
 
   validate :prog_alphanum_description, :prog_alphanum_title 
   validates :name, length: { in: 2..25 }, presence: true

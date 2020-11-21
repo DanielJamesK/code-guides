@@ -1,4 +1,4 @@
-<h1>Ruby Listings</h1>
+<h1><%= @programming_language.name %></h1>
 <div class="container d-flex justify-content-center">
   <div class="row d-flex justify-content-center">
     <% @listings.each do |listing| %>
@@ -15,8 +15,7 @@
             <p class="card-text"><%= listing.tutor_email %></p>
             <p class="card-text"><%= listing.description %></p>
             <p class="card-text"><%= listing.price %></p>
-            <p><%= link_to 'Show', listing %></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p><%= link_to 'Show', listing, class: "btn btn-primary btn-margin" %></p>
           </div>
         </div>
       </div>

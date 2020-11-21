@@ -18,15 +18,15 @@
             <td><%= programming_language.name %></td>
             <td><%= programming_language.description %></td>
             <td><%= programming_language.user.email %></td>
-            <td><%= link_to 'Show', programming_language %></td>
-            <td><%= link_to 'Edit', edit_programming_language_path(programming_language) %></td>
-            <td><%= link_to 'Destroy', programming_language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', programming_language, class: "btn btn-secondary" %></td>
+            <td><%= link_to 'Edit', edit_programming_language_path(programming_language), class: "btn btn-secondary" %></td>
+            <td><%= link_to 'Destroy', programming_language, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
     <br>
-    <%= link_to 'New Programming Language', new_programming_language_path %>
+    <%= link_to 'New Programming Language', new_programming_language_path, class: "btn btn-primary btn-margin" %>
     <hr>
   </div>
 <% end %>
