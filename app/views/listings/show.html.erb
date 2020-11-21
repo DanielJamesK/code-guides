@@ -12,27 +12,27 @@
     <div class="col-md-6">
       <p>
         <strong>Tutor name:</strong>
-        <%= @listing.tutor_name %>
+        <%= sanitize @listing.tutor_name %>
       </p>
       
       <p>
         <strong>Tutor email:</strong>
-        <%= @listing.tutor_email %>
+        <%= sanitize @listing.tutor_email %>
       </p>
       
       <p>
         <strong>Title:</strong>
-        <%= @listing.title %>
+        <%= sanitize @listing.title %>
       </p>
       
       <p>
         <strong>Description:</strong>
-        <%= @listing.description %>
+        <%= sanitize @listing.description %>
       </p>
       
       <p>
         <strong>Price:</strong>
-        <%= @listing.price %>
+        $<%= @listing.price %>
       </p>
 
       <% if user_signed_in? && (current_user.has_role?(:admin) || current_user.id == @listing.user_id )%>

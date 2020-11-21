@@ -17,10 +17,10 @@
     <tbody>
       <% @listings.each do |listing| %>
         <tr>
-          <td><%= listing.tutor_name %></td>
-          <td><%= listing.tutor_email %></td>
-          <td><%= listing.title %></td>
-          <td><%= listing.description %></td>
+          <td><%= sanitize listing.tutor_name %></td>
+          <td><%= sanitize listing.tutor_email %></td>
+          <td><%= sanitize listing.title %></td>
+          <td><%= sanitize listing.description %></td>
           <td><%= listing.price %></td>
           <td><%= listing.user_id %></td>
           <td><%= listing.programming_language_id %></td>
@@ -51,10 +51,10 @@
   </thead>
     <% @personal_listings.each do |listing| %>
       <tr>
-        <td><%= listing.tutor_name %></td>
-        <td><%= listing.tutor_email %></td>
-        <td><%= listing.title %></td>
-        <td><%= listing.description %></td>
+        <td><%= sanitize listing.tutor_name %></td>
+        <td><%= sanitize listing.tutor_email %></td>
+        <td><%= sanitize listing.title %></td>
+        <td><%= sanitize listing.description %></td>
         <td><%= listing.price %></td>
         <td><%= listing.user_id %></td>
         <td><%= listing.programming_language_id %></td>

@@ -5,7 +5,7 @@ class Listing < ApplicationRecord
   has_one_attached :picture, dependent: :purge
   
   validate :alphanum_description, :alphanum_title 
-  validates :title, length: { in: 2..25 }, presence: true
+  validates :title, length: { in: 2..50 }, presence: true
   validates :description, length: { maximum: 250 }, presence: true
   validates :price, presence: true
 

@@ -15,9 +15,9 @@
       <tbody>
         <% @programming_languages.each do |programming_language| %>
           <tr>
-            <td><%= programming_language.name %></td>
-            <td><%= programming_language.description %></td>
-            <td><%= programming_language.user.email %></td>
+            <td><%= sanitize programming_language.name %></td>
+            <td><%= sanitize programming_language.description %></td>
+            <td><%= sanitize programming_language.user.email %></td>
             <td><%= link_to 'Show', programming_language, class: "btn btn-secondary" %></td>
             <td><%= link_to 'Edit', edit_programming_language_path(programming_language), class: "btn btn-secondary" %></td>
             <td><%= link_to 'Destroy', programming_language, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %></td>
@@ -41,9 +41,9 @@
             <%= image_tag("codeimage2.jpg", class: "card-img-top")%>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title text-center "><%= programming_language.name %></h5>
+            <h5 class="card-title text-center "><%= sanitize programming_language.name %></h5>
             <h6>Description</h6>
-            <p class="card-text"><%= programming_language.description %></p>
+            <p class="card-text"><%= sanitize programming_language.description %></p>
             <%= link_to "See Listings", programming_language, class: "btn btn-primary" %>
             <div class="container d-flex justify-content-center ">
             </div>

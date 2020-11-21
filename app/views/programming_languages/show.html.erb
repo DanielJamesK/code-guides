@@ -1,5 +1,5 @@
 <div class="container d-flex justify-content-center heading-margin">
-  <h1><%= @programming_language.name %></h1>
+  <h1><%= sanitize @programming_language.name %></h1>
 </div>
 <div class="container d-flex justify-content-center">
   <div class="row d-flex justify-content-center">
@@ -12,14 +12,14 @@
             <%= image_tag("defaultimage2.png", class: "card-img-top")%>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title text-center "><%= listing.title %></h5>
+            <h5 class="card-title text-center "><%= sanitize listing.title %></h5>
+            <h6>Tutor Name</h6>
+            <p class="card-text"><%= sanitize listing.tutor_name %></p>
+            <h6>Tutor Email</h6>
+            <p class="card-text"><%= sanitize listing.tutor_email %></p>
             <h6>Description</h6>
-            <p class="card-text"><%= listing.tutor_name %></p>
-            <h6>Description</h6>
-            <p class="card-text"><%= listing.tutor_email %></p>
-            <h6>Description</h6>
-            <p class="card-text"><%= listing.description %></p>
-            <h6>Description</h6>
+            <p class="card-text"><%= sanitize listing.description %></p>
+            <h6>Price Per Session</h6>
             <p class="card-text">$<%= listing.price %></p>
             <div class="container d-flex justify-content-center">
               <p><%= link_to 'Show', listing, class: "btn btn-primary btn-margin" %></p>
