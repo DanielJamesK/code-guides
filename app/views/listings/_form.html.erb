@@ -4,13 +4,13 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :tutor_name, input_html: {value: "#{current_user.first_name + ' ' + current_user.last_name}"} %>
-    <%= f.input :tutor_email, input_html: {value: current_user.email}%>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.association :programming_language %>
-    <%= f.file_field :picture %>
+    <%= f.input :tutor_name, input_html: {value: "#{current_user.first_name + ' ' + current_user.last_name}"}, required: true %>
+    <%= f.input :tutor_email, input_html: {value: current_user.email}, required: true %>
+    <%= f.input :title, required: true %>
+    <%= f.input :description, required: true %>
+    <%= f.input :price, hint: ("Please enter the amount you wish to charge per session"), required: true %>
+    <%= f.association :programming_language, required: true %>
+    <%= f.file_field :picture, required: false %>
   </div>
 
   <div class="form-actions">

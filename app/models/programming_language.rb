@@ -3,4 +3,20 @@ class ProgrammingLanguage < ApplicationRecord
   has_many :listings, dependent: :destroy
 
   has_one_attached :picture
+
+  validate :prog_alphanum_description, :prog_alphanum_title 
+  validates :name, length: { in: 2..25 }, presence: true
+  validates :description, length: { maximum: 250 }, presence: true
+
+  def prog_alphanum_description
+    if description !~ /[[:alnum:]]/
+      errors.add(:description, "can only contain letters or numbers")
+    end
+  end
+
+  def prog_alphanum_title
+    if name !~ /[[:alnum:]]/
+      errors.add(:name, "can only contain letters or numbers")
+    end
+  end
 end
