@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:buy]
   before_action :authenticate_user!, except: [:buy]
   before_action :set_listing, only: [:show, :edit, :update, :destroy, :buy]
-  before_action :check_user, only: [:edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy, :success, :cancel]
   
   # GET /listings
   # GET /listings.json
@@ -92,11 +92,9 @@ class ListingsController < ApplicationController
   end
 
   def success
-    render plain: "Success!"
   end
 
   def cancel
-    render plain: "Cancel"
   end
 
   private

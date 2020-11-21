@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
 .listing-image{
   width: 100%;
   height: 100%;
+}
+
+.fdir{
+  display: flex;
+  flex-direction: column;
+}
+
+.para{
+  width: 50%;
 }
