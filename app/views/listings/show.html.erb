@@ -48,7 +48,28 @@
       <% if user_signed_in? && (current_user.has_role?(:admin) || current_user.id == @listing.user_id )%>
       <%= link_to 'Edit', edit_listing_path(@listing) %> |
       <% end %>
-      <%= link_to 'Back', listings_path %>
+      <%= link_to 'Back', :back %>
+
+      <p><button id="buynow-button">Buy Now!</button></p>
+
+      <script src="https://js.stripe.com/v3/"></script>
+
+      <script>
+          const stripe = Stripe('<%= ENV["STRIPE_PUBLISHABLE_KEY"] %>')
+          const buyButton = document.getElementById('buynow-button')
+
+          buyButton.addEventListener('click', function() {
+              fetch('<%= buy_path(@listing.id) %>', { 
+                  method: 'POST' 
+              })
+              .then(function(response) {
+                  return response.json()
+              })
+              .then(function(session) { 
+                  return stripe.redirectToCheckout({ sessionId: session.id })
+              })
+          })
+      </script>
     </div>
   </div>
 </div>
