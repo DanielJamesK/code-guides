@@ -7,6 +7,7 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
+          <th>Image</th>
           <th>User</th>
           <th colspan="3"></th>
         </tr>
@@ -17,6 +18,11 @@
           <tr>
             <td><%= sanitize programming_language.name %></td>
             <td><%= sanitize programming_language.description %></td>
+            <td><% if programming_language.picture.attached? %>
+              <%= cl_image_tag(programming_language.picture.key, crop: :scale, cloud_name: "dvlberf5o", width: 50) %>
+            <% else %>
+              <%= image_tag("codeimage2.jpg", width: "50")%>
+            <% end %></td>
             <td><%= sanitize programming_language.user.email %></td>
             <td><%= link_to 'Show', programming_language, class: "btn btn-secondary" %></td>
             <td><%= link_to 'Edit', edit_programming_language_path(programming_language), class: "btn btn-secondary" %></td>
