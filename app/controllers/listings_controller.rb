@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:buy]
   before_action :authenticate_user!, except: [:buy]
   before_action :set_listing, only: [:show, :edit, :update, :destroy, :buy]
-  before_action :check_user, only: [:edit]
+  before_action :check_user, only: [:edit, :update, :destroy]
   
   # GET /listings
   # GET /listings.json
@@ -104,7 +104,7 @@ class ListingsController < ApplicationController
     def check_user
       if user_signed_in? && (current_user.has_role?(:admin) || current_user.id == @listing.user_id )
       else 
-      flash[:alert] = "You can do that"
+      flash[:alert] = "You are not authorized to do that!"
       redirect_to root_path
       end
     end

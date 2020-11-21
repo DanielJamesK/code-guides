@@ -1,8 +1,8 @@
 class ProgrammingLanguagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_roles, only: [:edit, :update, :destroy]
+  before_action :check_roles, only: [:new, :edit, :update, :destroy]
   before_action :set_programming_language, only: [:show, :edit, :update, :destroy]
-  before_action :set_listing, only: [:show, :edit, :update, :destroy, :buy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   # GET /programming_languages
   # GET /programming_languages.json
@@ -63,38 +63,6 @@ class ProgrammingLanguagesController < ApplicationController
       format.html { redirect_to programming_languages_path, notice: 'Programming language was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def buy
-    Stripe.api_key = ENV['STRIPE_API_KEY']
-    session = Stripe::Checkout::Session.create({
-      payment_method_types: ['card'],
-      mode: 'payment',
-      success_url: success_url(params[:id]),
-      cancel_url: cancel_url(params[:id]),
-      line_items: [
-        {
-          price_data: {
-            currency: 'aud',
-            product_data: {
-              name: @listing.name
-            },
-            unit_amount: (@listing.price.to_f * 100).to_i
-          },
-          quantity: 1
-        }
-      ]
-    })
-
-    render json: session
-  end
-
-  def success
-    render plain: "Success!"
-  end
-
-  def cancel
-    render plain: "Cancel"
   end
 
   private
