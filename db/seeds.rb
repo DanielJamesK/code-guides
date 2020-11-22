@@ -36,41 +36,41 @@ python.picture.attach(io: File.open(File.join(Rails.root, 'app/assets/images/Pyt
 python.save!
 
 Listing.destroy_all
-listing1 = Listing.create!({user_id: users[0].id, tutor_name: "Daniel Jamesone", tutor_email: "Danielseedadmin@test.com", title: "Ruby Tutor", description: "I am an experineced tutor with more than 10 years experience", price: 25.00, programming_language_id: ruby.id})
+listing1 = Listing.create!({user_id: users[0].id, tutor_name: "Daniel Jamesone", tutor_email: "Danielseedadmin@test.com", title: "Ruby Tutor", description: "I am a professional tutor with more than 10 years of experience", price: 25.00, programming_language_id: ruby.id})
 
-listing2 = Listing.create!({user_id: users[1].id, tutor_name: "Daniel Jamestwo", tutor_email: "Danielseed2@test.com", title: "Ruby Tutor", description: "I am an experineced tutor with more than 5 years experience", price: 35.00, programming_language_id: ruby.id})
+listing2 = Listing.create!({user_id: users[1].id, tutor_name: "Daniel Jamestwo", tutor_email: "Danielseed2@test.com", title: "Ruby Tutor", description: "I am a professional tutor with more than 5 years of experience", price: 35.00, programming_language_id: ruby.id})
 
-listing3 = Listing.create!({user_id: users[2].id, tutor_name: "Daniel Jamesthree", tutor_email: "Danielseed3@test.com", title: "Ruby Tutor", description: "I am an experineced tutor with more than 6 years experience", price: 45.00, programming_language_id: ruby.id})
+listing3 = Listing.create!({user_id: users[2].id, tutor_name: "Daniel Jamesthree", tutor_email: "Danielseed3@test.com", title: "Ruby Tutor", description: "I am a professional tutor with more than 6 years of experience", price: 45.00, programming_language_id: ruby.id})
 
-listing4 = Listing.create!({user_id: users[3].id, tutor_name: "Daniel Jamesfour", tutor_email: "Danielseed4@test.com", title: "Javascript Tutor", description: "I am an experineced tutor with more than 8 years experience", price: 20.00, programming_language_id: javascript.id})
+listing4 = Listing.create!({user_id: users[3].id, tutor_name: "Daniel Jamesfour", tutor_email: "Danielseed4@test.com", title: "Javascript Tutor", description: "I am a professional tutor with more than 8 years of experience", price: 20.00, programming_language_id: javascript.id})
 
-listing5 = Listing.create!({user_id: users[4].id, tutor_name: "Daniel Jamesfive", tutor_email: "Danielseed5@test.com", title: "Javascript Tutor", description: "I am an experineced tutor with more than 7 years experience", price: 30.00, programming_language_id: javascript.id})
+listing5 = Listing.create!({user_id: users[4].id, tutor_name: "Daniel Jamesfive", tutor_email: "Danielseed5@test.com", title: "Javascript Tutor", description: "I am a professional tutor with more than 7 years of experience", price: 30.00, programming_language_id: javascript.id})
 
-listing6 = Listing.create!({user_id: users[5].id, tutor_name: "Daniel Jamessix", tutor_email: "Danielseed6@test.com", title: "Javascript Tutor", description: "I am an experineced tutor with more than 6 years experience", price: 40.00, programming_language_id: javascript.id})
+listing6 = Listing.create!({user_id: users[5].id, tutor_name: "Daniel Jamessix", tutor_email: "Danielseed6@test.com", title: "Javascript Tutor", description: "I am a professional tutor with more than 6 years of experience", price: 40.00, programming_language_id: javascript.id})
 
-listing7 = Listing.create!({user_id: users[6].id, tutor_name: "Daniel Jamesseven", tutor_email: "Danielseed7@test.com", title: "Python Tutor", description: "I am an experineced tutor with more than 4 years experience", price: 50.00, programming_language_id: python.id})
+listing7 = Listing.create!({user_id: users[6].id, tutor_name: "Daniel Jamesseven", tutor_email: "Danielseed7@test.com", title: "Python Tutor", description: "I am a professional tutor with more than 4 years of experience", price: 50.00, programming_language_id: python.id})
 
-listing8 = Listing.create!({user_id: users[7].id, tutor_name: "Daniel Jameseight", tutor_email: "Danielseed8@test.com", title: "Python Tutor", description: "I am an experineced tutor with more than 5 years experience", price: 40.00, programming_language_id: python.id})
+listing8 = Listing.create!({user_id: users[7].id, tutor_name: "Daniel Jameseight", tutor_email: "Danielseed8@test.com", title: "Python Tutor", description: "I am a professional tutor with more than 5 years of experience", price: 40.00, programming_language_id: python.id})
 
-listing9 = Listing.create!({user_id: users[8].id, tutor_name: "Daniel Jamesnine", tutor_email: "Danielseed9@test.com", title: "Python Tutor", description: "I am an experineced tutor with more than 6 years experience", price: 30.00, programming_language_id: python.id})
+listing9 = Listing.create!({user_id: users[8].id, tutor_name: "Daniel Jamesnine", tutor_email: "Danielseed9@test.com", title: "Python Tutor", description: "I am a professional tutor with more than 6 years of experience", price: 30.00, programming_language_id: python.id})
 
-listing10 = Listing.create!({user_id: users[0].id, tutor_name: "Daniel Jamesone", tutor_email: "Danielseedadmin@test.com", title: "Javascript Tutor", description: "I am an experineced tutor with more than 10 years experience", price: 25.00, programming_language_id: javascript.id})
+listing10 = Listing.create!({user_id: users[0].id, tutor_name: "Daniel Jamesone", tutor_email: "Danielseedadmin@test.com", title: "Javascript Tutor", description: "I am a professional tutor with more than 10 years of experience", price: 25.00, programming_language_id: javascript.id})
 
-listing11 = Listing.create!({user_id: users[1].id, tutor_name: "Daniel Jamestwo", tutor_email: "Danielseed2@test.com", title: "Javascript Tutor", description: "I am an experineced tutor with more than 5 years experience", price: 35.00, programming_language_id: javascript.id})
+listing11 = Listing.create!({user_id: users[1].id, tutor_name: "Daniel Jamestwo", tutor_email: "Danielseed2@test.com", title: "Javascript Tutor", description: "I am a professional tutor with more than 5 years of experience", price: 35.00, programming_language_id: javascript.id})
 
-listing12 = Listing.create!({user_id: users[2].id, tutor_name: "Daniel Jamesthree", tutor_email: "Danielseed3@test.com", title: "Javascript Tutor", description: "I am an experineced tutor with more than 6 years experience", price: 45.00, programming_language_id: javascript.id})
+listing12 = Listing.create!({user_id: users[2].id, tutor_name: "Daniel Jamesthree", tutor_email: "Danielseed3@test.com", title: "Javascript Tutor", description: "I am a professional tutor with more than 6 years of experience", price: 45.00, programming_language_id: javascript.id})
 
-listing13 = Listing.create!({user_id: users[3].id, tutor_name: "Daniel Jamesfour", tutor_email: "Danielseed4@test.com", title: "Python Tutor", description: "I am an experineced tutor with more than 8 years experience", price: 20.00, programming_language_id: python.id})
+listing13 = Listing.create!({user_id: users[3].id, tutor_name: "Daniel Jamesfour", tutor_email: "Danielseed4@test.com", title: "Python Tutor", description: "I am a professional tutor with more than 8 years of experience", price: 20.00, programming_language_id: python.id})
 
-listing14 = Listing.create!({user_id: users[4].id, tutor_name: "Daniel Jamesfive", tutor_email: "Danielseed5@test.com", title: "Python Tutor", description: "I am an experineced tutor with more than 7 years experience", price: 30.00, programming_language_id: python.id})
+listing14 = Listing.create!({user_id: users[4].id, tutor_name: "Daniel Jamesfive", tutor_email: "Danielseed5@test.com", title: "Python Tutor", description: "I am a professional tutor with more than 7 years of experience", price: 30.00, programming_language_id: python.id})
 
-listing15 = Listing.create!({user_id: users[5].id, tutor_name: "Daniel Jamessix", tutor_email: "Danielseed6@test.com", title: "Python Tutor", description: "I am an experineced tutor with more than 6 years experience", price: 40.00, programming_language_id: python.id})
+listing15 = Listing.create!({user_id: users[5].id, tutor_name: "Daniel Jamessix", tutor_email: "Danielseed6@test.com", title: "Python Tutor", description: "I am a professional tutor with more than 6 years of experience", price: 40.00, programming_language_id: python.id})
 
-listing16 = Listing.create!({user_id: users[6].id, tutor_name: "Daniel Jamesseven", tutor_email: "Danielseed7@test.com", title: "Ruby Tutor", description: "I am an experineced tutor with more than 4 years experience", price: 50.00, programming_language_id: ruby.id})
+listing16 = Listing.create!({user_id: users[6].id, tutor_name: "Daniel Jamesseven", tutor_email: "Danielseed7@test.com", title: "Ruby Tutor", description: "I am a professional tutor with more than 4 years of experience", price: 50.00, programming_language_id: ruby.id})
 
-listing17 = Listing.create!({user_id: users[7].id, tutor_name: "Daniel Jameseight", tutor_email: "Danielseed8@test.com", title: "Ruby Tutor", description: "I am an experineced tutor with more than 5 years experience", price: 40.00, programming_language_id: ruby.id})
+listing17 = Listing.create!({user_id: users[7].id, tutor_name: "Daniel Jameseight", tutor_email: "Danielseed8@test.com", title: "Ruby Tutor", description: "I am a professional tutor with more than 5 years of experience", price: 40.00, programming_language_id: ruby.id})
 
-listing18 = Listing.create!({user_id: users[8].id, tutor_name: "Daniel Jamesnine", tutor_email: "Danielseed9@test.com", title: "Ruby Tutor", description: "I am an experineced tutor with more than 6 years experience", price: 30.00, programming_language_id: ruby.id})
+listing18 = Listing.create!({user_id: users[8].id, tutor_name: "Daniel Jamesnine", tutor_email: "Danielseed9@test.com", title: "Ruby Tutor", description: "I am a professional tutor with more than 6 years of experience", price: 30.00, programming_language_id: ruby.id})
 
 
 
