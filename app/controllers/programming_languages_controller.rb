@@ -67,6 +67,7 @@ class ProgrammingLanguagesController < ApplicationController
 
   private
 
+    # Checks the users role and if they are not an Admin access is denied
     def check_roles
       if !(user_signed_in? && current_user.has_role?(:admin))
         flash[:alert] = 'You are not authorized to access that page'
@@ -74,6 +75,7 @@ class ProgrammingLanguagesController < ApplicationController
       end
     end
     
+    # Set listing so it can be accessed in the programming language views
     def set_listing
       @listings = Listing.all
     end

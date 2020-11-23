@@ -99,6 +99,7 @@ class ListingsController < ApplicationController
 
   private
 
+    # Checks to see if the user is the owner or the listing, or and admin, otherwise access is denied
     def check_user
       if user_signed_in? && (current_user.has_role?(:admin) || current_user.id == @listing.user_id )
       else 
@@ -106,7 +107,8 @@ class ListingsController < ApplicationController
       redirect_to root_path
       end
     end
-    # Use callbacks to share common setup or constraints between actions.
+   
+    # Sets the listing
     def set_listing
       @listing = Listing.find(params[:id])
     end

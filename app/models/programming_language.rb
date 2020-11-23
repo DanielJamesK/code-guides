@@ -8,12 +8,14 @@ class ProgrammingLanguage < ApplicationRecord
   validates :name, length: { in: 2..25 }, presence: true
   validates :description, length: { maximum: 250 }, presence: true
 
+  # Method the ensure the admin only enters alphanumerical characters for the programming language description
   def prog_alphanum_description
     if description !~ /[[:alnum:]]/
       errors.add(:description, "can only contain letters or numbers")
     end
   end
 
+  # Method the ensure the admin only enters alphanumerical characters for the programming language title
   def prog_alphanum_title
     if name !~ /[[:alnum:]]/
       errors.add(:name, "can only contain letters or numbers")
