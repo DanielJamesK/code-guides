@@ -7,7 +7,7 @@ class Listing < ApplicationRecord
   validate :alphanum_description, :alphanum_title 
   validates :title, length: { in: 2..50 }, presence: true
   validates :description, length: { maximum: 250 }, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0, less_than: 1000 }
 
 
   def alphanum_description
